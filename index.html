@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Registration Form</h1>
+            <form id="registrationForm">
+                <div class="input-group-horizontal">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" oninput="validateUsername()">
+                        <div id="usernameError" class="error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="occupation">Occupation</label>
+                        <input type="text" id="occupation" name="occupation" oninput="validateOccupation()">
+                        <div id="occupationError" class="error"></div>
+                    </div>
+                </div>
+            
+                <div class="input-group-horizontal">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" oninput=validateEmail()>
+                        <div id="emailError" class="error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" oninput="validateCompany()">
+                        <div id="companyError" class="error"></div>
+                    </div>
+                </div>
+            
+                <div class="input-group-horizontal">
+                    <div class="input-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" oninput="validatePhoneNumber()">
+                        <div id="phoneError" class="error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" onchange="validateCountry()">
+                            <option value="">Select a country</option>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                            <option value="UK">UK</option>
+                            <option value="South">South Africa</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Belgium">Belgium</option>
+                        </select>
+                        <div id="countryError" class="error"></div>
+                    </div>
+                </div>
+            
+                <div class="input-group-horizontal">
+                    <div class="input-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" onchange="validateDateOfBirth()">
+                        <div id="dateOfError" class="error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state" onchange="validateState()">
+                            <option value="">select a state</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Jharkand">Jharkand</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                        </select>
+                        <div id="stateError" class="error"></div>
+                    </div>
+                </div>
+
+                <div class="input-group-horizontal">
+                    <div class="input-group">
+                        <label for="zipcode">Zip Code</label>
+                        <input type="text" id="zipcode" name="zipcode" oninput="validateZipCode()">
+                        <div id="zipError" class="error"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="imageUpload">Prievew Image</label>
+                        <input type="file" id="imageUpload" name="imageUpload" onchange="validateImageUpload(); previewImage(event)">
+                        <div id="imageUploadError" class="error"></div>
+                    </div>
+                </div>
+
+                <div class="input-group-horizontal">
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male" onchange="validateGender()">
+                            <label for="male">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female" onchange="validateGender()">
+                            <label for="female">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="other" name="gender" value="other" onchange="validateGender()">
+                            <label for="other">Other</label>
+                        </div>
+                        <div id="genderError" class="error"></div>
+                    </div>
+                </div>
+                <div class="Image" style="display: flex; justify-content: center;">
+                    <div class="input-group">
+                        <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 100%; height: auto;">
+                    </div>
+                </div>
+
+                <input type="hidden" id="currentEditRow">
+                <div class="btn">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Zip Code</th>
+                <th>Gender</th>
+                <th>Occupation</th>
+                <th>Company</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>Date of Birth</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
